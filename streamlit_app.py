@@ -58,7 +58,7 @@ st.title("🔥 Next-Gen Movie Recommender App")
 st.markdown("""<span style='color:#f52331;font-size:28px;font-weight:700;'>Pick a Genre (required) & Suggest a watched film (optional). Get smart recommendations! 🚀</span>""", unsafe_allow_html=True)
 
 # ---- Data Load & Prep ----
-df = pd.read_csv(r'C:\Users\abdula\OneDrive\Desktop\MovieRecomendationKNN\movie_prediction_dataset.csv')
+df = pd.read_csv("movie_prediction_dataset.csv")
 df['overview'] = df['overview'].fillna('')
 df['genres'] = df['genres'].fillna('[]')
 df['genres'] = df['genres'].apply(lambda x: ' '.join([i['name'] for i in ast.literal_eval(x)]))
